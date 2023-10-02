@@ -23,16 +23,18 @@ const Login = (props) => {
     }
   };
 
+  /* eslint-disable react-hooks/exhaustive-deps */
     useEffect(()=>{
       if(localStorage.getItem("token")){
           navigate("/");
       } 
   }, [])
+/* eslint-disable react-hooks/exhaustive-deps */
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const response = await fetch(`${baseUrl}/api/auth/login`, {
+    const response = await fetch(`${baseUrl}api/auth/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

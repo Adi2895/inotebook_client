@@ -18,7 +18,7 @@ export default function ForgotPassword(props) {
   const handleSubmit = async(e)=>{
    
     e.preventDefault();
-    const response = await fetch(`${baseUrl}/api/auth/otpgenerate?email=${credentials.email}`,
+    const response = await fetch(`${baseUrl}api/auth/otpgenerate?email=${credentials.email}`,
     {              
       method: 'GET',
       headers: {
@@ -28,11 +28,11 @@ export default function ForgotPassword(props) {
       
       const json = await response.json();
       
-      if(response.status == 200) {
+      if(response.status === 200) {
         props.showAlert(`OTP has been sended at ${credentials.email} Successfully`, "success")
         navigate("/enter-otp")
       } else {
-          const error = await json.error;
+         
           props.showAlert(json.msg, "danger")
       }
   }

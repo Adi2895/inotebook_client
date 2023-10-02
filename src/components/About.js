@@ -1,13 +1,6 @@
-import React,{useEffect} from 'react'
-import { useNavigate } from 'react-router-dom'
+import React from 'react'
 export default function About() {
 
-    const navigate = useNavigate();
-    useEffect(()=>{
-        if(!localStorage.getItem("token")) {
-            navigate("/login")
-        }
-    },[])
 
     return (
         <>

@@ -13,7 +13,7 @@ export default function EnterOTP(props) {
         e.preventDefault();
         
         console.log(info.OTP)
-        const response = await fetch(`${baseUrl}/api/auth/otpverify?otp=${info.OTP}`, 
+        const response = await fetch(`${baseUrl}api/auth/otpverify?otp=${info.OTP}`, 
         {                      
             method:"GET", 
             headers: {
@@ -23,7 +23,7 @@ export default function EnterOTP(props) {
         
         const json  = await response.json();
         
-        if(response.status == 200) {
+        if(response.status === 200) {
           props.showAlert(`OTP has been verified Successfully`, "primary")
           navigate("/setpassword")
       } else {
