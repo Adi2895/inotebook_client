@@ -18,7 +18,7 @@ export default function ForgotPassword(props) {
   const handleSubmit = async(e)=>{
    
     e.preventDefault();
-    const response = await fetch(`${baseUrl}api/auth/otpgenerate?email=${credentials.email}`,
+    const response = await fetch(`${baseUrl}/api/auth/otpgenerate?email=${credentials.email}`,
     {              
       method: 'GET',
       headers: {

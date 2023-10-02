@@ -70,7 +70,7 @@ export default function SetPassword(props) {
         if(credentials.password === credentials.confirmPassword){
             setnotEqual(<i className="fa-solid fa-check" style={{color: "#24fbff;"}}></i>)
 
-            const response = await fetch(`${baseUrl}api/auth/resetpassword`, {
+            const response = await fetch(`${baseUrl}/api/auth/resetpassword`, {
                                     
             
                 method:"POST", 

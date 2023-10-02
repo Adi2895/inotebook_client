@@ -12,8 +12,8 @@ export default function EnterOTP(props) {
     const handleSubmit = async(e)=>{
         e.preventDefault();
         
-        console.log(info.OTP)
-        const response = await fetch(`${baseUrl}api/auth/otpverify?otp=${info.OTP}`, 
+        // console.log(info.OTP)
+        const response = await fetch(`${baseUrl}/api/auth/otpverify?otp=${info.OTP}`, 
         {                      
             method:"GET", 
             headers: {

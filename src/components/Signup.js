@@ -96,7 +96,7 @@ const Signup = (props) => {
         return;
     } else if (credentials.password === credentials.confirmPassword) {
       
-      const response = await fetch(`${baseUrl}api/auth/createuser`, {
+      const response = await fetch(`${baseUrl}/api/auth/createuser`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
