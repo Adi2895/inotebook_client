@@ -111,8 +111,8 @@ const Signup = (props) => {
       const json = await response.json();
       
       // alert(response.status)
-      if (json.status === 500 || json.status === 400) {
-        if (json.status === 500) {
+      if (response.status === 500 || response.status === 400) {
+        if (response.status === 500) {
           props.showAlert("Please fill the required details.", "danger");
         } else {
           props.showAlert(json.error, "danger");
