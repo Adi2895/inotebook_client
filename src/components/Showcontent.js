@@ -26,7 +26,7 @@ export default function Showcontent() {
     <h2 className='mb-2'>Description</h2>
     <br/>
     <div >
-      <p style={{wordWrap:"break-word"}>{note.description}</p>
+      <p style={{wordWrap:"break-word"}}>{note.description}</p>
       </div>
                 </div>
       </>
