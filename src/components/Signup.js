@@ -3,7 +3,7 @@ import "./style/signup.css";
 // import arrow from "./static/arrow.png"
 import { useNavigate, Link } from "react-router-dom";
 const baseUrl = process.env.REACT_APP_BASE_URL;
-
+// console.log(baseUrl)
 
 const Signup = (props) => {
   const navigate = useNavigate();
@@ -59,42 +59,45 @@ const Signup = (props) => {
    
     e.preventDefault();
 
+    var check = true;
+    if(true){
 
     if (credentials.name === "") {
       setTimeout(()=>{
         seterr1("");
       },2000)
       seterr1("Name Is Required");
-    } else seterr1("");
-
-    if (credentials.email === "") {
+      check = false;
+    } else {
+      seterr1("");
+      
+    }
+    if (credentials.email === "" || !isValidEmail(credentials.email)) {
       setTimeout(()=>{
         seterr2("");
       },2000)
-      seterr2("Email Is Required");
+      seterr2("Invalid Email");
+      check = false;      
     } else {
       seterr2("");
+      
     }
-    if (credentials.password === "") {
+    if (credentials.password === "" ) {
       setTimeout(()=>{
         seterr3("");
       },2000)
       seterr3("Password Is Required");
-    } else {
+      check = false;
+ 
+    } else 
       seterr3("");
-    }
+    
+    if(check === false) return;
+}
 
 
 
-
-
-    if(!isValidEmail(credentials.email)){
-      setTimeout(()=>{
-        seterr2("");
-      },2000)
-      seterr2("Invalid email")
-        return;
-    } else if (credentials.password === credentials.confirmPassword) {
+    if (credentials.password === credentials.confirmPassword) {
       
       const response = await fetch(`${baseUrl}/api/auth/createuser`, {
         method: "POST",
@@ -109,7 +112,8 @@ const Signup = (props) => {
       });
       
       const json = await response.json();
-      
+      console.log(response);
+
       // alert(response.status)
       if (response.status === 500 || response.status === 400) {
         if (response.status === 500) {
@@ -259,7 +263,7 @@ const Signup = (props) => {
                 onClick={handleSubmit}
                 type="submit"
               >
-                Register
+                Register 
               </button>
             </div>
           </fieldset>
