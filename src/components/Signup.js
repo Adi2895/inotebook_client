@@ -3,7 +3,6 @@ import "./style/signup.css";
 // import arrow from "./static/arrow.png"
 import { useNavigate, Link } from "react-router-dom";
 const baseUrl = process.env.REACT_APP_BASE_URL;
-// console.log(baseUrl)
 
 const Signup = (props) => {
   const navigate = useNavigate();
