@@ -107,7 +107,7 @@ export default function SetPassword(props) {
         
         <p className="mt-3 mb-5 secure_sentense"> Let's Recover Your Account.</p>           
         <div className="container_book_sign">
-        <img className="book_sign" srcSet={book}/>
+        <img className="book_sign" alt="" srcSet={book}/>
         </div>
       </div>
    
