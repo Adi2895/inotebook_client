@@ -3,7 +3,7 @@ import React, { useContext, useState, useEffect } from "react";
 import noteContext from "../context/noteContext";
 import { useNavigate } from "react-router-dom";
 import { Editor } from '@tinymce/tinymce-react';
-const AddNote = (props) => {
+const AddNote = () => {
   console.log(process.env.REACT_APP_BASE_URL);
   const context = useContext(noteContext);
   const { addNote } = context;
