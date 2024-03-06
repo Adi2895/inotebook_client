@@ -52,6 +52,7 @@ export default function EnterOTP(props) {
   };
 
   return (
+    <div className='OTP_cotainer'>
     <div className="container">  
     <div className="Enter_OTP row sign-up d-flex justify-content-center">
     
@@ -83,6 +84,7 @@ export default function EnterOTP(props) {
       <button type="submit" onClick={handleSubmit} className="btn btn-primary text-center">
         Submit
       </button>
+    </div>
     </div>
     </div>
   );
