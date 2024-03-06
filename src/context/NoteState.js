@@ -10,7 +10,7 @@ const NoteState = (props) => {
         const getallnotes = async () => {
 
             // API CALL:    
-            const response = await fetch(`http://localhost:1024/api/notes/fetchallnotes`, {
+            const response = await fetch(`${host}/api/notes/fetchallnotes`, {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",
@@ -32,7 +32,7 @@ const NoteState = (props) => {
         // API CALL:
 
         // eslint-disable-next-line
-        const response = await fetch(`http://localhost:1024/api/notes/addnote`, {
+        const response = await fetch(`${host}/api/notes/addnote`, {
             // const response = await fetch(`http://localhost:1024/api/notes/addnote`, {
          
           
@@ -54,7 +54,7 @@ const NoteState = (props) => {
     const deleteNote = async (id) => {
     
         // TODO:API CALL
-        const response = await fetch(`http://localhost:1024/api/notes/deletenote/${id}`, {
+        const response = await fetch(`${host}/api/notes/deletenote/${id}`, {
             method: "DELETE",
             headers: {
                 "Content-Type": "application/json",
@@ -74,7 +74,7 @@ const NoteState = (props) => {
     const editNote = async (id, title, description, tag) => {
         
         // API CALL:
-        const response = await fetch(`http://localhost:1024/api/notes/updatenote/${id}`, {
+        const response = await fetch(`${host}/api/notes/updatenote/${id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",
