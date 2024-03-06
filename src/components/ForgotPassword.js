@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import "./style/forgotPass.css"
-import arrow from "./static/arrow.png"
+import "./style/signup.css";
+
+import book from "./static/Enter-OTP.jpg"
 import { useNavigate} from 'react-router-dom';
 const baseUrl = process.env.REACT_APP_BASE_URL;
 export default function ForgotPassword(props) {
@@ -47,31 +48,35 @@ export default function ForgotPassword(props) {
   
   
     return (
-    
-  <div className='d-flex justify-content-center '>
+      <div className="container">  
+<div className=" row sign-up d-flex justify-content-center">
+      
+      <div className="col-md-4 col-lg-4 signup_image_side">
+        
+        <p className="mt-3 mb-5 secure_sentense"> Let's Get Started.</p>           
+        <div className="container_book_sign">
+        <img className="book_sign" srcSet={book}/>
+        </div>
+      </div>
 
-  <div className='arrow mb-5'>
-    <img src={arrow} className="arrow-img img-fluid rounded-top " alt=""/>
-  </div>
 
-
-<form className="form-horizontal" action='' method="POST" onSubmit={handleSubmit}>
-<fieldset>
+<form  className="form-horizontal col-md-8 col-lg-8 d-flex justify-content-center signup_register_part " action='' method="POST" onSubmit={handleSubmit}>
+<fieldset style={{marginTop:"115px"}}  className=''>
 <div id="legend">
   <legend className="">Please Verify your email</legend>
 </div>
 
 
-<div className="control-group mb-5">
+<div className="control-group mb-4">
   {/* <!-- E-mail --> */}
   <label className="control-label" for="email">E-mail</label>
   <div className="controls">
-    <input onChange={onChange} value={credentials.email} type="email"  id="email" name="email" placeholder="user@gmail.com" className="input-xlarge" required/>
+    <input style={{borderRadius:"5px", height:"48px"}} onChange={onChange} value={credentials.email} type="email"  id="email" name="email" placeholder="user@gmail.com" className="input-xlarge" required/>
       </div>
 </div>
   {/* <!-- Button --> */}
   <div className="controls d-flex justify-content-center mb-2">
-    <button className="btn btn-primary" onClick={handleSubmit}type='submit'>Send OTP</button>
+    <button className="btn btn-lg btn-primary " onClick={handleSubmit}type='submit'>Send OTP</button>
   </div>
 
 
@@ -82,6 +87,7 @@ export default function ForgotPassword(props) {
 
   
 
+</div>
 </div>
   )
 }

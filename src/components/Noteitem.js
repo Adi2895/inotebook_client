@@ -6,6 +6,10 @@ const Noteitem = (props) => {
   const context = useContext(noteContext);
   const { deleteNote } = context;
   const { note, updateNote } = props;
+  const stripHtmlTags = (html) => {
+    const doc = new DOMParser().parseFromString(html, 'text/html');
+    return doc.body.textContent || "";
+  };
   
   
 
@@ -31,19 +35,21 @@ const Noteitem = (props) => {
             ></i>
           </div>
           <p style={{ color: "#000" }} className="card-text">
-            {note.description.length < 70 ? (
-              note.description
+            {note.description.length < 50 ? (
+
+            stripHtmlTags(note.description)
             ) : (
               <>
-                {note.description.slice(0, 50)}
+                {stripHtmlTags(note.description.slice(0, 50))}
                 <Link
                   to={`/note/${note._id}`}
                   style={{ color: "blue", textDecoration: "none" }}
                 >
-                  ...Show more{" "}
+                  Open Note{" "}
                 </Link>
               </>
             )}
+             
           </p>
         </div>
       </div>

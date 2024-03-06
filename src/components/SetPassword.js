@@ -1,5 +1,7 @@
 import React, {useState,useEffect} from 'react'
 import { useNavigate } from 'react-router-dom';
+import "./style/signup.css"
+import book from "./static/digitalnotebook.jpeg"
 const baseUrl = process.env.REACT_APP_BASE_URL;
 
 export default function SetPassword(props) {
@@ -99,8 +101,17 @@ export default function SetPassword(props) {
     
 
   return (
-    <div className='d-flex justify-content-center'>
-      <form className="mb-3" onSubmit={handleSubmit}>
+    <div className="container">  
+    <div className=" row sign-up d-flex justify-content-center">
+      <div className="col-md-4 col-lg-4 signup_image_side">
+        
+        <p className="mt-3 mb-5 secure_sentense"> Let's Recover Your Account.</p>           
+        <div className="container_book_sign">
+        <img className="book_sign" srcSet={book}/>
+        </div>
+      </div>
+   
+      <form className="form-horizontal col-md-8 col-lg-8 signup_register_part" onSubmit={handleSubmit}>
       <h2 className='mb-4'>Reset Password</h2>
 
 
@@ -137,6 +148,7 @@ export default function SetPassword(props) {
         <button type="submit" style={{marginLeft:"121px"}} name="" id="" className="btn btn-primary text-center" >Submit</button>
      
       </form>
+    </div>
     </div>
   )
 }

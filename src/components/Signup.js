@@ -1,6 +1,6 @@
 import React, { useState , useEffect } from "react";
 import "./style/signup.css";
-// import arrow from "./static/arrow.png"
+import book from "./static/1238w-WKieQj6vCN4.webp"
 import { useNavigate, Link } from "react-router-dom";
 const baseUrl = process.env.REACT_APP_BASE_URL;
 
@@ -99,7 +99,8 @@ const Signup = (props) => {
     if (credentials.password === credentials.confirmPassword) {
       
       const response = await fetch(`${baseUrl}/api/auth/createuser`, {
-        method: "POST",
+         
+      method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
@@ -141,96 +142,109 @@ const Signup = (props) => {
 
   return (
     <>
-      <div className="sign-up d-flex justify-content-center">
-        <form
-          className="form-horizontal"
+    <div className="container">     
+       <div className=" row sign-up d-flex justify-content-center">
+      
+        <div className="col-md-4 col-lg-4 signup_image_side">
+          
+            <p className="mt-3 mb-5 secure_sentense"> Secure Your Notes by connecting with us</p>           
+            <div className="container_book_sign">
+            <img className="book_sign" srcSet={book}/>
+            </div>
+          </div>
+
+        <form className="form-horizontal col-md-8 col-lg-8 signup_register_part"
           action=""
           method="POST"
           onSubmit={handleSubmit}
         >
           <fieldset>
-            <div id="legend">
-              <legend className="">Register</legend>
-            </div>
+           <br/>
+              <h1   className="legend">Create Account</h1>
+            
 
-            <div className="mb-3">
-              <label for="" className="form-label">
-                Name
-              </label>
-              <input
-                type="text"
-                onChange={onChange}
-                className="form-control"
-                name="name"
-                id=""
-                aria-describedby="emailHelpId"
-                placeholder="Name"
-                required
-              />
-              <small
-                style={{ color: "red" }}
-                id="emailHelpId"
-                className="form-text"
-              >
-                {err1}
-              </small>
-            </div>
+            {/* name */}
+                      <div className="mb-3">
+                        <div class="form-group">
+                          <label>First name</label>
+                      <input
+                      type="text"
+                      onChange={onChange}
+                      className="form-control"
+                      name="name"
+                      id=""
+                      aria-describedby="emailHelpId"
+                      placeholder="Name"
+                      required
+                  />
+                      <small
+                          style={{ color: "red" }}
+                          id="emailHelpId"
+                          className="form-text"
+                      >
+                          {err1}
+                      </small>
+                      </div>
+                      </div>
+
+
+
 
             {/* email */}
-            <div className="mb-3">
-              <label for="" className="form-label">
-                Email
-              </label>
-              <input
-                type="email"
-                onChange={onChange}
-                className="form-control"
-                name="email"
-                id=""
-                aria-describedby="emailHelpId"
-                placeholder="abc@mail.com"
-                required
-              />
-              <small
-                style={{ color: "red" }}
-                id="emailHelpId"
-                className="form-text "
-              >
-                {err2}
-              </small>
-            </div>
+                  <div className="mb-3">
+                    <label >
+                      Email
+                    </label>
+                    <input
+                      type="email"
+                      onChange={onChange}
+                      className="form-control"
+                      name="email"
+                      id=""
+                      aria-describedby="emailHelpId"
+                      placeholder="abc@mail.com"
+                      required
+                    />
+                    <small
+                      style={{ color: "red" }}
+                      id="emailHelpId"
+                      className="form-text "
+                    >
+                      {err2}
+                    </small>
+                  </div>
 
             {/* password */}
-            <div className="mb-3">
-              <label for="" className="form-label">
-                Password
-              </label>
-              <span style={{ float: "right" }}>
-                <i onClick={eyePassfun} className={eyePass}></i>
-              </span>
-              <input
-                type={visiblepass}
-                onChange={onChange}
-                className="form-control"
-                name="password"
-                id=""
-                aria-describedby="emailHelpId"
-                placeholder="Enter password"
-                required
-              />
+                    <div className="mb-3">
+                      <label>
+                        Password
+                      </label>
+                      <span style={{ float: "right" }}>
+                        <i onClick={eyePassfun} className={eyePass}></i>
+                      </span>
+                      <input
+                        type={visiblepass}
+                        onChange={onChange}
+                        className="form-control"
+                        name="password"
+                        id=""
+                        aria-describedby="emailHelpId"
+                        placeholder="Enter password"
+                        required
+                      />
 
-              <small
-                style={{ color: "red" }}
-                id="emailHelpId"
-                className="form-text"
-              >
-                {err3}
-              </small>
-            </div>
+                      <small
+                        style={{ color: "red" }}
+                        id="emailHelpId"
+                        className="form-text"
+                      >
+                        {err3}
+                      </small>
+                    </div>
 
             {/* confirm password */}
             <div className="mb-3">
-              <label for="" className="form-label">
+              <label >
                 Confirm Password
               </label>
               <span style={{ float: "right" }}>
@@ -256,9 +270,9 @@ const Signup = (props) => {
             </div>
 
             {/* <!-- Button --> */}
-            <div className="controls d-flex justify-content-center mb-2">
+            <div className="controls d-flex justify-content-center mt-4 mb-3">
               <button
-                className="btn btn-primary"
+                className="btn btn-primary register_btn"
                 onClick={handleSubmit}
                 type="submit"
               >
@@ -266,13 +280,41 @@ const Signup = (props) => {
               </button>
             </div>
           </fieldset>
-          <div>
-            <Link to="/login" className="text-decoration-none">
-              Already a user? Login now.
+          <div className="mb-3"> 
+          
+            <Link to="/login" className="text-decoration-none ">
+              Already have an account? Login.
             </Link>
           </div>
+
+          
+
+            <div className="container mb-4">
+              <div className="d-flex justify-content-center">
+            _______________ OR _______________
+              </div>
+              </div>        
+
+         
+          {/* <br/> */}
+          <div className="container my-3">
+              <div className="d-flex justify-content-center">
+            <button className="mx-3 direct_sign">
+            <i style={{color:"black"}} class="fa-brands fa-facebook-f"></i>
+              &nbsp; Sign up with Facebook
+            </button>
+            <button className="mx-3 direct_sign">
+            <i style={{color:"black"}} class="fa-brands fa-google"></i> Sign up with Google
+            </button>
+              </div>
+              </div> 
         </form>
+
+
+       
       </div>
+      </div>
+
     </>
   );
 };

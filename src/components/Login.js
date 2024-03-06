@@ -1,5 +1,7 @@
 import React, { useState,useEffect } from "react";
-import "./style/login.css";
+import "./style/signup.css";
+
+import book from "./static/black_book.avif"
 import { Link, useNavigate } from "react-router-dom";
 const baseUrl = process.env.REACT_APP_BASE_URL;
 
@@ -34,8 +36,11 @@ const Login = (props) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const response = await fetch(`${baseUrl}/api/auth/login`, {
-      method: "POST",
+    // const response = await fetch(`${baseUrl}/api/auth/login`, {
+      const response = await fetch(`http://localhost:1024/api/auth/login`, {
+   
+   
+    method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
@@ -63,21 +68,25 @@ const Login = (props) => {
 
   return (
     <>
-      <section className="vh-100">
-        <div className="container-fluid h-custom mt-3">
-          <div className="row d-flex justify-content-center align-items-center h-100">
-            <div className="col-md-9 col-lg-6 col-xl-5 mb-4">
-              <img
-                src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
-                alt="img"
-                className="img-fluid"
-              />
-            </div>
-            <div className="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-              <form onSubmit={handleSubmit}>
+    <div className="container">  
+      <div className=" row sign-up d-flex justify-content-center">
+      <div className="col-md-4 col-lg-4 signup_image_side">
+        
+        <p className="mt-3 mb-5 secure_sentense"> Let's Get Started.</p>           
+        <div className="container_book_sign">
+        <img className="book_sign" srcSet={book}/>
+        </div>
+      </div>
+
+
+        <form onSubmit={handleSubmit} className="form-horizontal col-md-8 col-lg-8 signup_register_part">
                 
+              <br/>
+              <h1   className="legend">Login Now</h1>
+            
+
                 <div className="form-outline mb-4">
-                  <label className="form-label" htmlFor="email">
+                  <label  htmlFor="email">
                     Email address
                   </label>
                   <input
@@ -93,7 +102,7 @@ const Login = (props) => {
                 </div>
 
                 <div className="form-outline mb-1">
-                  <label className="form-label" htmlFor="password">
+                  <label  htmlFor="password">
                     Password
                   </label>
                   <small style={{ float: "right" }}>
@@ -123,26 +132,38 @@ const Login = (props) => {
                   </div>
                 </div>
 
-                <div className="text-center text-lg-start mt-4 pt-2">
+                <div className="controls d-flex justify-content-center mt-4 mb-3">
                   <button
                     type="submit"
-                    className="btn btn-primary btn-lg"
-                    style={{ paddingLeft: "2.5rem", paddingRight: "2.5rem" }}
+                    className="btn btn-primary register_btn"
+                    // style={{ paddingLeft: "2.5rem", paddingRight: "2.5rem" }}
                   >
                     Login
                   </button>
-                  <p className="small fw-bold mt-2 pt-1 mb-0">
+                 
+                </div>
+
+                <div className="mb-3">
+                <p className="small fw-bold mt-2 pt-1 mb-0">
                     Don't have any account?
                     <Link to="/signup" className="link-danger">
                       Register
                     </Link>
                   </p>
                 </div>
-              </form>
-            </div>
+
+               
+        <br/>
+        <br/>
+        <br/>
+        
+        </form>
+
+
+       
+         
           </div>
-        </div>
-      </section>
+          </div>
     </>
   );
 };
