@@ -2,6 +2,7 @@ import { useState } from 'react';
 import noteContext from './noteContext';
 
 const NoteState = (props) => {
+
     const host = process.env.REACT_APP_BASE_URL;
     const initialNotes = []
 
@@ -33,9 +34,7 @@ const NoteState = (props) => {
 
         // eslint-disable-next-line
         const response = await fetch(`${host}/api/notes/addnote`, {
-            // const response = await fetch(`http://localhost:1024/api/notes/addnote`, {
-         
-          
+           
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
