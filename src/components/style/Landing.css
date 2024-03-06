@@ -1,0 +1,64 @@
+.container_landing{
+    background: linear-gradient(to bottom right,  rgb(195, 195, 252), rgb(242, 232, 232),  rgb(195, 195, 252) );
+}
+
+.heading{
+    font-size: 80px;
+    font-weight:bolder;
+}
+
+.landing{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.heading_below{
+    font-weight:lighter;
+}
+
+i {
+    position: relative;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  i:hover {
+    color: rgb(244, 243, 243);
+    transform: rotate(360deg);
+  }
+  
+
+  .changable:hover{
+    color:white;
+    background-color: blue;
+    font-weight: bolder;
+  }
+
+.sub_heading{
+    color:rgb(91, 90, 90);
+}  
+
+.head_{
+    font-weight:bolder;
+}
+/* Media query for tablets (portrait and landscape) */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+
+    .heading{
+        font-size: 65px;
+        font-weight:bolder;
+    }
+    
+  }
+  
+  /* Media query for mobile devices (portrait and landscape) */
+  @media screen and (max-width: 767px) {
+    .heading{
+        font-size: 48px;
+        font-weight:bolder;
+    }
+  }
+  
+  /* Media query for laptops and desktops */
+  @media screen and (min-width: 1025px) {
+   
+  }
+  
