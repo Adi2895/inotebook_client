@@ -3,9 +3,12 @@ import "./style/signup.css";
 
 import book from "./static/black_book.avif"
 import { Link, useNavigate } from "react-router-dom";
-const baseUrl = process.env.REACT_APP_BASE_URL;
 
 const Login = (props) => {
+
+
+const baseUrl = process.env.REACT_APP_BASE_URL;
+
   let navigate = useNavigate();
 
   const [credentials, setCredentials] = useState({ email: "", password: "" });
@@ -73,7 +76,7 @@ const Login = (props) => {
         
         <p className="mt-3 mb-5 secure_sentense"> Let's Get Started.</p>           
         <div className="container_book_sign">
-        <img className="book_sign" srcSet={book}/>
+        <img className="book_sign" alt="" srcSet={book}/>
         </div>
       </div>
 
