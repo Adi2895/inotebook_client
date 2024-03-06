@@ -1,0 +1,28 @@
+.input_otp{
+    border-bottom: '1px solid black';
+    border-left: 0px none white;
+    border-right: 0px none white;
+    border-top: 0px none white;
+    height: 55px;
+    width: 40px;
+    border-radius: 10px;
+    background-color:rgb(249, 240, 228);
+    margin-right: 10px;
+}
+
+
+
+.Enter_OTP{
+    font-family:'Times New Roman', Times, serif;
+    margin-left: 35px;
+    width:90%;
+    background: linear-gradient(to bottom right , rgb(169, 167, 169), rgb(205, 198, 185), rgb(244, 198, 205), rgb(244, 183, 183));
+}
+
+h3{
+    color:  black;
+}
+
+.text-decoration-none{
+    color: rgb(11, 10, 10);
+}
