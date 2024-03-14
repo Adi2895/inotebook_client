@@ -35,7 +35,7 @@ export default function LandingPage() {
       
         
         <div className='row mb-5 mt-5 text-center comprehensive'>
-                <h1 className='mb-5' style={{fontWeight:"bolder"}}>Qualities that noteeazy have</h1>
+                <h1 className='mb-5' style={{fontWeight:"bolder"}}>Qualities that NoteEazy have</h1>
           
                 {qualities.map((obj)=>(
                 <div className='col-md-4 my-3'>
